@@ -1,14 +1,18 @@
+// include file petshop.cpp
 #include "petshop.cpp"
 
 int main()
 {
+    // membuat objek PetShop
     PetShop shop;
     int choice, id, harga, umur, berat;
     string nama, kategori, jenis, ras, warna, tanggal_kadaluarsa, dosis, bahan;
     bool status_vaksin;
 
+    // loop utama program
     while (true)
     {
+        // menampilkan menu
         show_menu();
         cout << "Pilih menu: ";
         cin >> choice;
@@ -16,6 +20,7 @@ int main()
         switch (choice)
         {
         case 1:
+            // menambah produk baru
             cout << "Tambah Produk" << endl;
             show_kategori();
             cout << "Pilih kategori produk: ";
@@ -26,6 +31,7 @@ int main()
             cout << "ID: ";
             cin >> id;
 
+            // cek apakah id produk sudah ada
             if (shop.find_produk(id) != NULL)
             {
                 cout << "ID sudah ada. Silakan masukkan ID yang berbeda." << endl;
@@ -37,6 +43,7 @@ int main()
             cout << "Harga (Rp): ";
             cin >> harga;
 
+            // menambah produk berdasarkan kategori
             switch (choice)
             {
             case 1:
@@ -100,11 +107,13 @@ int main()
             break;
 
         case 2:
+            // menampilkan semua produk
             cout << "Tampilkan Produk" << endl;
             shop.read_produk();
             break;
 
         case 3:
+            // mencari produk berdasarkan id
             cout << "Cari Produk" << endl;
             cout << "ID: ";
             cin >> id;
@@ -120,6 +129,7 @@ int main()
             break;
 
         case 4:
+            // mengubah data produk
             cout << "Ubah Produk" << endl;
             cout << "ID: ";
             cin >> id;
@@ -136,6 +146,7 @@ int main()
                 cout << "Harga (Rp): ";
                 cin >> harga;
 
+                // mengubah produk berdasarkan kategori
                 switch (choice)
                 {
                 case 1:
@@ -204,6 +215,7 @@ int main()
             break;
 
         case 5:
+            // menghapus produk berdasarkan id
             cout << "Hapus Produk" << endl;
             cout << "ID: ";
             cin >> id;
@@ -211,6 +223,7 @@ int main()
             break;
 
         case 6:
+            // keluar dari program
             cout << "Keluar" << endl;
             return 0;
 
