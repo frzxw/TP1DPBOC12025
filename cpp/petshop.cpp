@@ -1,21 +1,26 @@
+// library yang digunakan
 #include <iostream>
 #include <string>
 #include <vector>
 
 using namespace std;
 
+// kelas petshop yang merupakan kelas utama
 class PetShop
 {
 public:
+    // kelas produk yang merupakan kelas abstrak
     class Produk
     {
+        // protected agar dapat diakses oleh kelas turunannya
     protected:
         int id;
         string nama;
         string kategori;
         int harga;
-
+        // public agar dapat diakses oleh kelas turunannya
     public:
+        // konstruktor untuk kelas produk
         Produk()
         {
             this->id = 0;
@@ -32,6 +37,7 @@ public:
             this->harga = harga;
         }
 
+        // getter dan setter untuk setiap atribut
         int get_id() { return id; }
         string get_nama() { return nama; }
         string get_kategori() { return kategori; }
@@ -42,6 +48,7 @@ public:
         void set_kategori(string kategori) { this->kategori = kategori; }
         void set_harga(int harga) { this->harga = harga; }
 
+        // metode display untuk menampilkan informasi produk
         virtual void display()
         {
             cout << "ID: " << id << endl;
@@ -50,19 +57,23 @@ public:
             cout << "Harga: " << harga << endl;
         }
 
+        // destruktor untuk kelas produk
         virtual ~Produk() {};
     };
 
+    // kelas hewan yang merupakan turunan dari kelas produk
     class Hewan : public Produk
     {
+        // private agar tidak dapat diakses oleh kelas lain
     private:
         int umur;
         bool status_vaksin;
         string jenis;
         string ras;
         string warna;
-
+        // public agar dapat diakses oleh kelas lain
     public:
+        // konstruktor untuk kelas hewan
         Hewan()
         {
             this->umur = 0;
@@ -75,6 +86,7 @@ public:
         Hewan(int id, string nama, string kategori, int harga, int umur, bool status_vaksin, string jenis, string ras, string warna)
             : Produk(id, nama, kategori, harga), umur(umur), status_vaksin(status_vaksin), jenis(jenis), ras(ras), warna(warna) {}
 
+        // getter dan setter untuk setiap atribut
         int get_umur() { return umur; }
         bool get_status_vaksin() { return status_vaksin; }
         string get_jenis() { return jenis; }
@@ -87,6 +99,7 @@ public:
         void set_ras(string ras) { this->ras = ras; }
         void set_warna(string warna) { this->warna = warna; }
 
+        // metode display untuk menampilkan informasi hewan
         void display()
         {
             Produk::display();
@@ -97,17 +110,22 @@ public:
             cout << "Warna: " << warna << endl;
         }
 
+        // destruktor untuk kelas hewan
         ~Hewan() {};
     };
 
+    // kelas makanan yang merupakan turunan dari kelas produk
     class Makanan : public Produk
     {
+        // private agar tidak dapat diakses oleh kelas lain
     private:
         int berat;
         string jenis;
         string tanggal_kadaluarsa;
 
+        // public agar dapat diakses oleh kelas lain
     public:
+        // konstruktor untuk kelas makanan
         Makanan()
         {
             this->berat = 0;
@@ -118,6 +136,7 @@ public:
         Makanan(int id, string nama, string kategori, int harga, int berat, string jenis, string tanggal_kadaluarsa)
             : Produk(id, nama, kategori, harga), berat(berat), jenis(jenis), tanggal_kadaluarsa(tanggal_kadaluarsa) {}
 
+        // getter dan setter untuk setiap atribut
         int get_berat() { return berat; }
         string get_jenis() { return jenis; }
         string get_tanggal_kadaluarsa() { return tanggal_kadaluarsa; }
@@ -126,6 +145,7 @@ public:
         void set_jenis(string jenis) { this->jenis = jenis; }
         void set_tanggal_kadaluarsa(string tanggal_kadaluarsa) { this->tanggal_kadaluarsa = tanggal_kadaluarsa; }
 
+        // metode display untuk menampilkan informasi makanans
         void display()
         {
             Produk::display();
@@ -134,17 +154,22 @@ public:
             cout << "Tanggal Kadaluarsa: " << tanggal_kadaluarsa << endl;
         }
 
+        // destruktor untuk kelas makanan
         ~Makanan() {};
     };
 
+    // kelas aksesoris yang merupakan turunan dari kelas produk
     class Aksesoris : public Produk
     {
+        // private agar tidak dapat diakses oleh kelas lain
     private:
         string bahan;
         string jenis;
         string warna;
 
+        // public agar dapat diakses oleh kelas lain
     public:
+        // konstruktor untuk kelas aksesoris
         Aksesoris()
         {
             this->bahan = "";
@@ -155,6 +180,7 @@ public:
         Aksesoris(int id, string nama, string kategori, int harga, string bahan, string jenis, string warna)
             : Produk(id, nama, kategori, harga), bahan(bahan), jenis(jenis), warna(warna) {}
 
+        // getter dan setter untuk setiap atribut
         string get_bahan() { return bahan; }
         string get_jenis() { return jenis; }
         string get_warna() { return warna; }
@@ -163,6 +189,7 @@ public:
         void set_jenis(string jenis) { this->jenis = jenis; }
         void set_warna(string warna) { this->warna = warna; }
 
+        // metode display untuk menampilkan informasi aksesoris
         void display()
         {
             Produk::display();
@@ -171,17 +198,22 @@ public:
             cout << "Warna: " << warna << endl;
         }
 
+        // destruktor untuk kelas aksesoris
         ~Aksesoris() {};
     };
 
+    // kelas obat yang merupakan turunan dari kelas produk
     class Obat : public Produk
     {
+        // private agar tidak dapat diakses oleh kelas lain
     private:
         string dosis;
         string jenis;
         string tanggal_kadaluarsa;
 
+        // public agar dapat diakses oleh kelas lain
     public:
+        // konstruktor untuk kelas obat
         Obat()
         {
             this->dosis = "";
@@ -192,6 +224,7 @@ public:
         Obat(int id, string nama, string kategori, int harga, string dosis, string jenis, string tanggal_kadaluarsa)
             : Produk(id, nama, kategori, harga), dosis(dosis), jenis(jenis), tanggal_kadaluarsa(tanggal_kadaluarsa) {}
 
+        // getter dan setter untuk setiap atribut
         string get_dosis() { return dosis; }
         string get_jenis() { return jenis; }
         string get_tanggal_kadaluarsa() { return tanggal_kadaluarsa; }
@@ -200,6 +233,7 @@ public:
         void set_jenis(string jenis) { this->jenis = jenis; }
         void set_tanggal_kadaluarsa(string tanggal_kadaluarsa) { this->tanggal_kadaluarsa = tanggal_kadaluarsa; }
 
+        // metode display untuk menampilkan informasi obat
         void display()
         {
             Produk::display();
@@ -208,17 +242,22 @@ public:
             cout << "Tanggal Kadaluarsa: " << tanggal_kadaluarsa << endl;
         }
 
+        // destruktor untuk kelas obat
         ~Obat() {};
     };
 
+    // kelas mainan yang merupakan turunan dari kelas produk
     class Mainan : public Produk
     {
+        // private agar tidak dapat diakses oleh kelas lain
     private:
         string bahan;
         string jenis;
         string warna;
 
+        // public agar dapat diakses oleh kelas lain
     public:
+        // konstruktor untuk kelas mainan
         Mainan()
         {
             this->bahan = "";
@@ -229,6 +268,7 @@ public:
         Mainan(int id, string nama, string kategori, int harga, string bahan, string jenis, string warna)
             : Produk(id, nama, kategori, harga), bahan(bahan), jenis(jenis), warna(warna) {}
 
+        // getter dan setter untuk setiap atribut
         string get_bahan() { return bahan; }
         string get_jenis() { return jenis; }
         string get_warna() { return warna; }
@@ -237,6 +277,7 @@ public:
         void set_jenis(string jenis) { this->jenis = jenis; }
         void set_warna(string warna) { this->warna = warna; }
 
+        // metode display untuk menampilkan informasi mainan
         void display()
         {
             Produk::display();
@@ -245,6 +286,7 @@ public:
             cout << "Warna: " << warna << endl;
         }
 
+        // destruktor untuk kelas mainan
         ~Mainan() {};
     };
 
