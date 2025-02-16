@@ -57,7 +57,7 @@ int main()
                 cin >> ras;
                 cout << "Warna: ";
                 cin >> warna;
-                shop.create_produk(new PetShop::Hewan(id, nama, kategori, harga, umur, status_vaksin, jenis, ras, warna));
+                shop.create_produk(new Hewan(id, nama, kategori, harga, umur, status_vaksin, jenis, ras, warna));
                 break;
 
             case 2:
@@ -67,7 +67,7 @@ int main()
                 cin >> jenis;
                 cout << "Tanggal Kadaluarsa: ";
                 cin >> tanggal_kadaluarsa;
-                shop.create_produk(new PetShop::Makanan(id, nama, kategori, harga, berat, jenis, tanggal_kadaluarsa));
+                shop.create_produk(new Makanan(id, nama, kategori, harga, berat, jenis, tanggal_kadaluarsa));
                 break;
 
             case 3:
@@ -77,7 +77,7 @@ int main()
                 cin >> jenis;
                 cout << "Warna: ";
                 cin >> warna;
-                shop.create_produk(new PetShop::Aksesoris(id, nama, kategori, harga, bahan, jenis, warna));
+                shop.create_produk(new Aksesoris(id, nama, kategori, harga, bahan, jenis, warna));
                 break;
 
             case 4:
@@ -87,7 +87,7 @@ int main()
                 cin >> jenis;
                 cout << "Tanggal Kadaluarsa: ";
                 cin >> tanggal_kadaluarsa;
-                shop.create_produk(new PetShop::Obat(id, nama, kategori, harga, dosis, jenis, tanggal_kadaluarsa));
+                shop.create_produk(new Obat(id, nama, kategori, harga, dosis, jenis, tanggal_kadaluarsa));
                 break;
 
             case 5:
@@ -97,7 +97,7 @@ int main()
                 cin >> jenis;
                 cout << "Warna: ";
                 cin >> warna;
-                shop.create_produk(new PetShop::Mainan(id, nama, kategori, harga, bahan, jenis, warna));
+                shop.create_produk(new Mainan(id, nama, kategori, harga, bahan, jenis, warna));
                 break;
 
             default:
@@ -160,7 +160,7 @@ int main()
                     cin >> ras;
                     cout << "Warna: ";
                     cin >> warna;
-                    shop.update_produk(id, new PetShop::Hewan(id, nama, kategori, harga, umur, status_vaksin, jenis, ras, warna));
+                    shop.update_produk(id, new Hewan(id, nama, kategori, harga, umur, status_vaksin, jenis, ras, warna));
                     break;
 
                 case 2:
@@ -170,7 +170,7 @@ int main()
                     cin >> jenis;
                     cout << "Tanggal Kadaluarsa: ";
                     cin >> tanggal_kadaluarsa;
-                    shop.update_produk(id, new PetShop::Makanan(id, nama, kategori, harga, berat, jenis, tanggal_kadaluarsa));
+                    shop.update_produk(id, new Makanan(id, nama, kategori, harga, berat, jenis, tanggal_kadaluarsa));
                     break;
 
                 case 3:
@@ -180,7 +180,7 @@ int main()
                     cin >> jenis;
                     cout << "Warna: ";
                     cin >> warna;
-                    shop.update_produk(id, new PetShop::Aksesoris(id, nama, kategori, harga, bahan, jenis, warna));
+                    shop.update_produk(id, new Aksesoris(id, nama, kategori, harga, bahan, jenis, warna));
                     break;
 
                 case 4:
@@ -190,7 +190,7 @@ int main()
                     cin >> jenis;
                     cout << "Tanggal Kadaluarsa: ";
                     cin >> tanggal_kadaluarsa;
-                    shop.update_produk(id, new PetShop::Obat(id, nama, kategori, harga, dosis, jenis, tanggal_kadaluarsa));
+                    shop.update_produk(id, new Obat(id, nama, kategori, harga, dosis, jenis, tanggal_kadaluarsa));
                     break;
 
                 case 5:
@@ -200,7 +200,7 @@ int main()
                     cin >> jenis;
                     cout << "Warna: ";
                     cin >> warna;
-                    shop.update_produk(id, new PetShop::Mainan(id, nama, kategori, harga, bahan, jenis, warna));
+                    shop.update_produk(id, new Mainan(id, nama, kategori, harga, bahan, jenis, warna));
                     break;
 
                 default:
