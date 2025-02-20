@@ -1,5 +1,6 @@
 from petshop import PetShop
 
+# fungsi untuk menampilkan menu utama
 def show_menu():
     print("+----------------------+")
     print("|       MENU           |")
@@ -12,6 +13,7 @@ def show_menu():
     print("| 6. Keluar            |")
     print("+----------------------+")
 
+# fungsi untuk menampilkan kategori produk
 def show_kategori():
     print("+----------------------+")
     print("|     KATEGORI         |")
@@ -23,6 +25,7 @@ def show_kategori():
     print("| 5. Mainan            |")
     print("+----------------------+")
 
+# fungsi untuk mengatur kategori berdasarkan pilihan
 def set_kategori(choice):
     kategori = ""
     if choice == 1:
@@ -39,80 +42,87 @@ def set_kategori(choice):
         print("Pilihan tidak valid")
     return kategori
 
+# fungsi utama
 def main():
-    shop = []
-    running = True
+    shop = []  # list untuk menyimpan produk
+    running = True  # flag untuk menjalankan loop
 
     while running:
-        show_menu()
-        choice = int(input("Pilih menu: "))
+        show_menu()  # tampilkan menu
+        choice = int(input("Pilih menu: "))  # input pilihan menu
 
         if choice == 1:
+            # tambah produk baru
             print("Tambah Produk")
-            show_kategori()
-            kategori_choice = int(input("Pilih kategori produk: "))
-            kategori = set_kategori(kategori_choice)
+            show_kategori()  # tampilkan kategori
+            kategori_choice = int(input("Pilih kategori produk: "))  # input pilihan kategori
+            kategori = set_kategori(kategori_choice)  # set kategori berdasarkan pilihan
 
-            id = int(input("ID: "))
-            if any(p.get_id_produk() == id for p in shop):
+            id = int(input("ID: "))  # input id produk
+            if any(p.get_id_produk() == id for p in shop):  # cek apakah id sudah ada
                 print("ID sudah ada. Silakan masukkan ID yang berbeda.")
                 continue
 
-            nama = input("Nama: ")
-            harga = int(input("Harga (Rp): "))
+            nama = input("Nama: ")  # input nama produk
+            harga = int(input("Harga (Rp): "))  # input harga produk
 
-            produk = PetShop(id, nama, kategori, harga)
-            shop.append(produk)
+            produk = PetShop(id, nama, kategori, harga)  # buat objek produk baru
+            shop.append(produk)  # tambahkan produk ke list
 
         elif choice == 2:
+            # tampilkan semua produk
             print("Tampilkan Produk")
             for produk in shop:
-                produk.read_produk()
+                produk.read_produk()  # panggil method untuk menampilkan detail produk
 
         elif choice == 3:
+            # cari produk berdasarkan id
             print("Cari Produk")
-            id = int(input("ID: "))
+            id = int(input("ID: "))  # input id produk
             found = False
             for produk in shop:
-                if produk.get_id_produk() == id:
+                if produk.get_id_produk() == id:  # cek apakah id produk ditemukan
                     print("Produk ditemukan")
-                    produk.read_produk()
+                    produk.read_produk()  # tampilkan detail produk
                     found = True
                     break
             if not found:
                 print("Produk tidak ditemukan")
 
         elif choice == 4:
+            # ubah detail produk
             print("Ubah Produk")
-            id = int(input("ID: "))
+            id = int(input("ID: "))  # input id produk
             for produk in shop:
-                if produk.get_id_produk() == id:
-                    show_kategori()
-                    kategori_choice = int(input("Pilih kategori produk: "))
-                    kategori = set_kategori(kategori_choice)
+                if produk.get_id_produk() == id:  # cek apakah id produk ditemukan
+                    show_kategori()  # tampilkan kategori
+                    kategori_choice = int(input("Pilih kategori produk: "))  # input pilihan kategori
+                    kategori = set_kategori(kategori_choice)  # set kategori berdasarkan pilihan
 
-                    nama = input("Nama: ")
-                    harga = int(input("Harga (Rp): "))
+                    nama = input("Nama: ")  # input nama produk baru
+                    harga = int(input("Harga (Rp): "))  # input harga produk baru
 
-                    produk.update_produk(id, nama, kategori, harga)
+                    produk.update_produk(id, nama, kategori, harga)  # update detail produk
                     break
             else:
                 print("Produk tidak ditemukan")
 
         elif choice == 5:
+            # hapus produk berdasarkan id
             print("Hapus Produk")
-            id = int(input("ID: "))
+            id = int(input("ID: "))  # input id produk
             for produk in shop:
-                if produk.get_id_produk() == id:
-                    shop.remove(produk)
+                if produk.get_id_produk() == id:  # cek apakah id produk ditemukan
+                    shop.remove(produk)  # hapus produk dari list
                     print("Produk berhasil dihapus!")
                     break
             else:
                 print("Produk tidak ditemukan")
 
         elif choice == 6:
+            # keluar dari program
             print("Keluar")
-            running = False
+            running = False  # set flag running menjadi false
 
         else:
             print("Pilihan tidak valid")

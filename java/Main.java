@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
+    // menampilkan menu utama
     public static void showMenu() {
         System.out.println("+----------------------+");
         System.out.println("|       MENU           |");
@@ -17,6 +18,7 @@ public class Main {
         System.out.println("+----------------------+");
     }
 
+    // menampilkan kategori produk
     public static void showKategori() {
         System.out.println("+----------------------+");
         System.out.println("|     KATEGORI         |");
@@ -29,6 +31,7 @@ public class Main {
         System.out.println("+----------------------+");
     }
 
+    // mengatur kategori berdasarkan pilihan
     public static String setKategori(int choice) {
         switch (choice) {
             case 1:
@@ -51,6 +54,7 @@ public class Main {
         ArrayList<PetShop> shop = new ArrayList<>();
         boolean running = true;
 
+        // loop utama program
         while (running) {
             showMenu();
             System.out.print("Pilih menu: ");
@@ -58,6 +62,7 @@ public class Main {
 
             switch (choice) {
                 case 1:
+                    // menambah produk baru
                     System.out.println("Tambah Produk");
                     showKategori();
                     System.out.print("Pilih kategori produk: ");
@@ -89,6 +94,7 @@ public class Main {
                     break;
 
                 case 2:
+                    // menampilkan semua produk
                     System.out.println("Tampilkan Produk");
                     for (PetShop p : shop) {
                         p.readProduk();
@@ -96,6 +102,7 @@ public class Main {
                     break;
 
                 case 3:
+                    // mencari produk berdasarkan id
                     System.out.println("Cari Produk");
                     System.out.print("ID: ");
                     id = scanner.nextInt();
@@ -114,6 +121,7 @@ public class Main {
                     break;
 
                 case 4:
+                    // mengubah data produk
                     System.out.println("Ubah Produk");
                     System.out.print("ID: ");
                     id = scanner.nextInt();
@@ -138,6 +146,7 @@ public class Main {
                     break;
 
                 case 5:
+                    // menghapus produk berdasarkan id
                     System.out.println("Hapus Produk");
                     System.out.print("ID: ");
                     id = scanner.nextInt();
@@ -157,11 +166,13 @@ public class Main {
                     break;
 
                 case 6:
+                    // keluar dari program
                     System.out.println("Keluar");
                     running = false;
                     break;
 
                 default:
+                    // pilihan tidak valid
                     System.out.println("Pilihan tidak valid");
                     break;
             }

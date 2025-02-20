@@ -1,7 +1,10 @@
 <?php
 require_once 'petshop.php';
 
+// inisialisasi array untuk menyimpan produk
 $shop = [];
+
+// cek apakah ada aksi yang dikirim melalui form
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
     $id = $_POST['id'] ?? 0;
@@ -10,29 +13,38 @@ if (isset($_POST['action'])) {
     $harga = $_POST['harga'] ?? 0;
     $foto = '';
 
+    // cek apakah ada file foto yang diupload
     if (isset($_FILES['foto']) && $_FILES['foto']['error'] == UPLOAD_ERR_OK) {
         $uploads_dir = 'uploads';
+        // buat direktori uploads jika belum ada
         if (!is_dir($uploads_dir)) {
             mkdir($uploads_dir, 0777, true);
         }
+        // simpan file foto ke direktori uploads
         $foto = $uploads_dir . '/' . $id . '.' . pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
         move_uploaded_file($_FILES['foto']['tmp_name'], $foto);
     }
 
+    // aksi untuk menambah produk baru
     if ($action == 'create') {
         $produk = new PetShop($id, $nama, $kategori, $harga, $foto);
         $shop[] = $produk;
-    } elseif ($action == 'update') {
+    } 
+    // aksi untuk mengupdate produk yang sudah ada
+    elseif ($action == 'update') {
         foreach ($shop as $produk) {
             if ($produk->get_id_produk() == $id) {
                 $produk->update_produk($id, $nama, $kategori, $harga, $foto);
                 break;
             }
         }
-    } elseif ($action == 'delete') {
+    } 
+    // aksi untuk menghapus produk
+    elseif ($action == 'delete') {
         foreach ($shop as $key => $produk) {
             if ($produk->get_id_produk() == $id) {
                 $foto_path = $produk->get_foto_produk();
+                // hapus file foto dari direktori
                 if (file_exists($foto_path)) {
                     unlink($foto_path);
                 }
@@ -185,6 +197,7 @@ if (isset($_POST['action'])) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
     <script>
         $(document).ready(function () {
+            // konfirmasi sebelum menghapus produk
             $('.deleteForm').on('submit', function (e) {
                 e.preventDefault();
                 var form = this;
@@ -203,6 +216,7 @@ if (isset($_POST['action'])) {
                 });
             });
 
+            // konfirmasi sebelum menambah produk baru
             $('#createForm').on('submit', function (e) {
                 e.preventDefault();
                 var form = this;
@@ -221,6 +235,7 @@ if (isset($_POST['action'])) {
                 });
             });
 
+            // menampilkan form edit produk
             $('.edit-btn').on('click', function () {
                 var id = $(this).data('id');
                 var nama = $(this).data('nama');
@@ -264,6 +279,7 @@ if (isset($_POST['action'])) {
                     cancelButtonText: 'Batal'
                 });
 
+                // konfirmasi sebelum mengubah produk
                 $('#editForm').on('submit', function (e) {
                     e.preventDefault();
                     var form = this;
