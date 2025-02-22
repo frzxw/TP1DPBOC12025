@@ -1,10 +1,10 @@
 class PetShop:
     # konstruktor untuk menginisialisasi atribut produk
     def __init__(self, id_produk, nama_produk, kategori_produk, harga_produk):
-        self.id_produk = id_produk
-        self.nama_produk = nama_produk
-        self.kategori_produk = kategori_produk
-        self.harga_produk = harga_produk
+        self.set_id_produk(id_produk)
+        self.set_nama_produk(nama_produk)
+        self.set_kategori_produk(kategori_produk)
+        self.set_harga_produk(harga_produk)
 
     # metode untuk mendapatkan id produk
     def get_id_produk(self):
@@ -40,32 +40,32 @@ class PetShop:
 
     # metode untuk membuat produk baru
     def create_produk(self, id_produk, nama_produk, kategori_produk, harga_produk):
-        self.id_produk = id_produk
-        self.nama_produk = nama_produk
-        self.kategori_produk = kategori_produk
-        self.harga_produk = harga_produk
+        self.set_id_produk(id_produk)
+        self.set_nama_produk(nama_produk)
+        self.set_kategori_produk(kategori_produk)
+        self.set_harga_produk(harga_produk)
 
     # metode untuk membaca informasi produk
     def read_produk(self):
-        print(f"ID Produk: {self.id_produk}")
-        print(f"Nama Produk: {self.nama_produk}")
-        print(f"Kategori Produk: {self.kategori_produk}")
-        print(f"Harga Produk: {self.harga_produk}")
+        print(f"ID Produk: {self.get_id_produk()}")
+        print(f"Nama Produk: {self.get_nama_produk()}")
+        print(f"Kategori Produk: {self.get_kategori_produk()}")
+        print(f"Harga Produk: {self.get_harga_produk()}")
 
     # metode untuk memperbarui informasi produk
     def update_produk(self, id_produk, nama_produk, kategori_produk, harga_produk):
-        self.id_produk = id_produk
-        self.nama_produk = nama_produk
-        self.kategori_produk = kategori_produk
-        self.harga_produk = harga_produk
+        self.set_id_produk(id_produk)
+        self.set_nama_produk(nama_produk)
+        self.set_kategori_produk(kategori_produk)
+        self.set_harga_produk(harga_produk)
 
     # metode untuk menghapus produk
     def delete_produk(self):
-        self.id_produk = 0
-        self.nama_produk = ""
-        self.kategori_produk = ""
-        self.harga_produk = 0
+        self.set_id_produk(0)
+        self.set_nama_produk("")
+        self.set_kategori_produk("")
+        self.set_harga_produk(0)
         
     # destruktor untuk menghapus objek produk
     def __del__(self):
-        print(f"Produk dengan ID {self.id_produk} telah dihapus.")
+        print(f"Produk dengan ID {self.get_id_produk()} telah dihapus.")

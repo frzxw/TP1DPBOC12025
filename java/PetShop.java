@@ -55,33 +55,33 @@ public class PetShop {
 
     // method untuk membuat produk baru
     public void createProduk(int idProduk, String namaProduk, String kategoriProduk, int hargaProduk) {
-        this.idProduk = idProduk;
-        this.namaProduk = namaProduk;
-        this.kategoriProduk = kategoriProduk;
-        this.hargaProduk = hargaProduk;
+        setIdProduk(idProduk);
+        setNamaProduk(namaProduk);
+        setKategoriProduk(kategoriProduk);
+        setHargaProduk(hargaProduk);
     }
 
     // method untuk membaca informasi produk
     public void readProduk() {
-        System.out.println("ID Produk: " + idProduk);
-        System.out.println("Nama Produk: " + namaProduk);
-        System.out.println("Kategori Produk: " + kategoriProduk);
-        System.out.println("Harga Produk: " + hargaProduk);
+        System.out.println("ID Produk: " + getIdProduk());
+        System.out.println("Nama Produk: " + getNamaProduk());
+        System.out.println("Kategori Produk: " + getKategoriProduk());
+        System.out.println("Harga Produk: " + getHargaProduk());
     }
 
     // method untuk mengupdate informasi produk
     public void updateProduk(int idProduk, String namaProduk, String kategoriProduk, int hargaProduk) {
-        this.idProduk = idProduk;
-        this.namaProduk = namaProduk;
-        this.kategoriProduk = kategoriProduk;
-        this.hargaProduk = hargaProduk;
+        setIdProduk(idProduk);
+        setNamaProduk(namaProduk);
+        setKategoriProduk(kategoriProduk);
+        setHargaProduk(hargaProduk);
     }
 
     // method untuk menghapus informasi produk
     public void deleteProduk() {
-        idProduk = 0;
-        namaProduk = "";
-        kategoriProduk = "";
-        hargaProduk = 0;
+        setIdProduk(0);
+        setNamaProduk("");
+        setKategoriProduk("");
+        setHargaProduk(0);
     }
 }

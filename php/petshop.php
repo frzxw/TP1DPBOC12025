@@ -9,11 +9,11 @@ class PetShop {
 
     // konstruktor untuk menginisialisasi properti
     public function __construct($id_produk, $nama_produk, $kategori_produk, $harga_produk, $foto_produk) {
-        $this->id_produk = $id_produk;
-        $this->nama_produk = $nama_produk;
-        $this->kategori_produk = $kategori_produk;
-        $this->harga_produk = $harga_produk;
-        $this->foto_produk = $foto_produk;
+        $this->set_id_produk($id_produk);
+        $this->set_nama_produk($nama_produk);
+        $this->set_kategori_produk($kategori_produk);
+        $this->set_harga_produk($harga_produk);
+        $this->set_foto_produk($foto_produk);
     }
 
     // metode untuk mendapatkan id produk
@@ -68,38 +68,38 @@ class PetShop {
 
     // metode untuk membuat produk baru
     public function create_produk($id_produk, $nama_produk, $kategori_produk, $harga_produk, $foto_produk) {
-        $this->id_produk = $id_produk;
-        $this->nama_produk = $nama_produk;
-        $this->kategori_produk = $kategori_produk;
-        $this->harga_produk = $harga_produk;
-        $this->foto_produk = $foto_produk;
+        $this->set_id_produk($id_produk);
+        $this->set_nama_produk($nama_produk);
+        $this->set_kategori_produk($kategori_produk);
+        $this->set_harga_produk($harga_produk);
+        $this->set_foto_produk($foto_produk);
     }
 
     // metode untuk membaca data produk
     public function read_produk() {
-        echo "ID Produk: " . $this->id_produk . "\n";
-        echo "Nama Produk: " . $this->nama_produk . "\n";
-        echo "Kategori Produk: " . $this->kategori_produk . "\n";
-        echo "Harga Produk: " . $this->harga_produk . "\n";
-        echo "Foto Produk: " . $this->foto_produk . "\n";
+        echo "ID Produk: " . $this->get_id_produk() . "\n";
+        echo "Nama Produk: " . $this->get_nama_produk() . "\n";
+        echo "Kategori Produk: " . $this->get_kategori_produk() . "\n";
+        echo "Harga Produk: " . $this->get_harga_produk() . "\n";
+        echo "Foto Produk: " . $this->get_foto_produk() . "\n";
     }
 
     // metode untuk memperbarui data produk
     public function update_produk($id_produk, $nama_produk, $kategori_produk, $harga_produk, $foto_produk) {
-        $this->id_produk = $id_produk;
-        $this->nama_produk = $nama_produk;
-        $this->kategori_produk = $kategori_produk;
-        $this->harga_produk = $harga_produk;
-        $this->foto_produk = $foto_produk;
+        $this->set_id_produk($id_produk);
+        $this->set_nama_produk($nama_produk);
+        $this->set_kategori_produk($kategori_produk);
+        $this->set_harga_produk($harga_produk);
+        $this->set_foto_produk($foto_produk);
     }
 
     // metode untuk menghapus data produk
     public function delete_produk() {
-        $this->id_produk = 0;
-        $this->nama_produk = "";
-        $this->kategori_produk = "";
-        $this->harga_produk = 0;
-        $this->foto_produk = "";
+        $this->set_id_produk(0);
+        $this->set_nama_produk("");
+        $this->set_kategori_produk("");
+        $this->set_harga_produk(0);
+        $this->set_foto_produk("");
     }
 }
 ?>
