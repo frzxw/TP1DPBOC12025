@@ -30,36 +30,36 @@ Berikut adalah penjelasan rinci mengenai atribut dan metode yang dibuat dalam pr
 
 1. **Atribut**
 
-   - **id_produk**: Menyimpan identifikasi unik untuk setiap produk.
-   - **nama_produk**: Menyimpan nama dari produk.
-   - **kategori_produk**: Menyimpan kategori atau jenis dari produk.
-   - **harga_produk**: Menyimpan harga dari produk.
-   - **foto_produk**: Menyimpan foto atau gambar dari produk.
+    - **id_produk**: Menyimpan identifikasi unik untuk setiap produk di petshop, memastikan setiap produk dapat dibedakan satu sama lain.
+    - **nama_produk**: Menyimpan nama dari produk di petshop, memudahkan dalam pencarian dan pengenalan produk.
+    - **kategori_produk**: Menyimpan kategori atau jenis dari produk di petshop, membantu dalam pengelompokan produk berdasarkan jenisnya.
+    - **harga_produk**: Menyimpan harga dari produk di petshop, menyediakan informasi harga yang diperlukan untuk transaksi.
+    - **foto_produk**: Menyimpan foto atau gambar dari produk di petshop, memberikan visualisasi produk kepada pelanggan.
 
 2. **Metode**
 
-   - **Setter dan Getter**:
+    - **Setter dan Getter**:
 
-     - **setIdProduk(id_produk)**: Mengatur nilai `id_produk`.
-     - **getIdProduk()**: Mengambil nilai `id_produk`.
-     - **setNamaProduk(nama_produk)**: Mengatur nilai `nama_produk`.
-     - **getNamaProduk()**: Mengambil nilai `nama_produk`.
-     - **setKategoriProduk(kategori_produk)**: Mengatur nilai `kategori_produk`.
-     - **getKategoriProduk()**: Mengambil nilai `kategori_produk`.
-     - **setHargaProduk(harga_produk)**: Mengatur nilai `harga_produk`.
-     - **getHargaProduk()**: Mengambil nilai `harga_produk`.
-     - **setFotoProduk(foto_produk)**: Mengatur nilai `foto_produk`.
-     - **getFotoProduk()**: Mengambil nilai `foto_produk`.
+      - **setIdProduk(id_produk)**: Mengatur nilai `id_produk`, memastikan setiap produk di petshop memiliki identifikasi unik.
+      - **getIdProduk()**: Mengambil nilai `id_produk`, memudahkan dalam pengambilan identifikasi produk di petshop.
+      - **setNamaProduk(nama_produk)**: Mengatur nilai `nama_produk`, memastikan nama produk di petshop dapat diubah sesuai kebutuhan.
+      - **getNamaProduk()**: Mengambil nilai `nama_produk`, memudahkan dalam pengambilan nama produk di petshop.
+      - **setKategoriProduk(kategori_produk)**: Mengatur nilai `kategori_produk`, memastikan kategori produk di petshop dapat diubah sesuai kebutuhan.
+      - **getKategoriProduk()**: Mengambil nilai `kategori_produk`, memudahkan dalam pengambilan kategori produk di petshop.
+      - **setHargaProduk(harga_produk)**: Mengatur nilai `harga_produk`, memastikan harga produk di petshop dapat diubah sesuai kebutuhan.
+      - **getHargaProduk()**: Mengambil nilai `harga_produk`, memudahkan dalam pengambilan harga produk di petshop.
+      - **setFotoProduk(foto_produk)**: Mengatur nilai `foto_produk`, memastikan foto produk di petshop dapat diubah sesuai kebutuhan.
+      - **getFotoProduk()**: Mengambil nilai `foto_produk`, memudahkan dalam pengambilan foto produk di petshop.
 
-   - **Konstruktor dan Destruktor**:
+    - **Konstruktor dan Destruktor**:
 
-     - **Konstruktor**: Metode yang dipanggil saat pembuatan objek untuk menginisialisasi atribut dengan nilai awal.
-     - **Destruktor**: Metode yang dipanggil saat objek dihancurkan untuk melakukan pembersihan atau dealokasi sumber daya.
+      - **Konstruktor**: Metode yang dipanggil saat pembuatan objek untuk menginisialisasi atribut dengan nilai awal, memastikan setiap produk di petshop diinisialisasi dengan benar.
+      - **Destruktor**: Metode yang dipanggil saat objek dihancurkan untuk melakukan pembersihan atau dealokasi sumber daya, memastikan sumber daya di petshop dikelola dengan baik.
 
-   - **Fungsi CRUD**:
-     - **Create**: Fungsi untuk menambahkan data produk baru ke dalam sistem.
-     - **Read**: Fungsi untuk membaca atau mengambil data produk dari sistem.
-     - **Update**: Fungsi untuk memperbarui data produk yang sudah ada dalam sistem.
-     - **Delete**: Fungsi untuk menghapus data produk dari sistem.
+    - **Fungsi CRUD**:
+      - **Create**: Fungsi untuk menambahkan data produk baru ke dalam sistem petshop, memastikan produk baru dapat ditambahkan.
+      - **Read**: Fungsi untuk membaca atau mengambil data produk dari sistem petshop, memastikan data produk dapat diakses.
+      - **Update**: Fungsi untuk memperbarui data produk yang sudah ada dalam sistem petshop, memastikan data produk dapat diperbarui.
+      - **Delete**: Fungsi untuk menghapus data produk dari sistem petshop, memastikan data produk yang tidak diperlukan dapat dihapus.
 
 Penjelasan di atas mencakup fungsi dari masing-masing atribut serta metode yang dibuat dalam proyek ini. Pastikan untuk melihat gambar hasil run kode di setiap bahasa untuk memahami implementasi lebih lanjut.
