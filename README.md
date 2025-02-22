@@ -1,30 +1,36 @@
 # Desain dan Pemrograman Berbasis Objek
+---
 
 ## Tugas Praktikum 1
+---
 
 ### Janji
+---
 
 Saya Fariz Wibisono dengan NIM 2307589 mengerjakan Tugas Praktikum 1 dalam mata kuliah Desain dan Pemrograman Berorientasi Objek untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.
 
 ### Dokumentasi
+---
 
 #### Bahasa Pemrograman
+---
 
 Proyek ini diimplementasikan dalam beberapa bahasa pemrograman. Berikut adalah hasil run kode di setiap bahasa:
 
-1. ![C++ Icon](https://img.icons8.com/color/48/000000/c-plus-plus-logo.png) **C++**
+1. ![C++ Icon](https://img.icons8.com/color/24/000000/c-plus-plus-logo.png) **C++**
    ![C++ Run](cpp/docs/run.png)
 
-2. ![Java Icon](https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png) **Java**
+2. ![Java Icon](https://img.icons8.com/color/24/000000/java-coffee-cup-logo.png) **Java**
    ![Java Run](java/docs/run.png)
 
-3. ![PHP Icon](https://img.icons8.com/officel/40/000000/php-logo.png) **PHP**
+3. ![PHP Icon](https://img.icons8.com/officel/20/000000/php-logo.png) **PHP**
    ![PHP Run](php/docs/run.png)
 
-4. ![Python Icon](https://img.icons8.com/color/48/000000/python.png) **Python**
+4. ![Python Icon](https://img.icons8.com/color/24/000000/python.png) **Python**
    ![Python Run](python/docs/run.png)
 
 #### Penjelasan Atribut dan Metode
+---
 
 Berikut adalah penjelasan rinci mengenai atribut dan metode yang dibuat dalam proyek ini:
 
