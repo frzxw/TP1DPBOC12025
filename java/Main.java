@@ -125,6 +125,7 @@ public class Main {
                     System.out.println("Ubah Produk");
                     System.out.print("ID: ");
                     id = scanner.nextInt();
+                    boolean updated = false;
                     for (PetShop p : shop) {
                         if (p.getIdProduk() == id) {
                             showKategori();
@@ -139,10 +140,15 @@ public class Main {
                             harga = scanner.nextInt();
 
                             p.updateProduk(id, nama, kategori, harga);
+                            updated = true;
                             break;
                         }
                     }
-                    System.out.println("Produk tidak ditemukan");
+                    if (updated) {
+                        System.out.println("Produk berhasil diubah!");
+                    } else {
+                        System.out.println("Produk tidak ditemukan");
+                    }
                     break;
 
                 case 5:
