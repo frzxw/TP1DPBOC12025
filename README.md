@@ -62,10 +62,11 @@ Berikut adalah penjelasan rinci mengenai atribut dan metode yang dibuat dalam pr
       - **Konstruktor**: Metode yang dipanggil saat pembuatan objek untuk menginisialisasi atribut dengan nilai awal, memastikan setiap produk di petshop diinisialisasi dengan benar.
       - **Destruktor**: Metode yang dipanggil saat objek dihancurkan untuk melakukan pembersihan atau dealokasi sumber daya, memastikan sumber daya di petshop dikelola dengan baik.
 
-    - **Fungsi CRUD**:
-      - **Create**: Fungsi untuk menambahkan data produk baru ke dalam sistem petshop, memastikan produk baru dapat ditambahkan.
-      - **Read**: Fungsi untuk membaca atau mengambil data produk dari sistem petshop, memastikan data produk dapat diakses.
-      - **Update**: Fungsi untuk memperbarui data produk yang sudah ada dalam sistem petshop, memastikan data produk dapat diperbarui.
-      - **Delete**: Fungsi untuk menghapus data produk dari sistem petshop, memastikan data produk yang tidak diperlukan dapat dihapus.
+   - **Fungsi CRUD**:
+     - **Create**: Fungsi untuk menambahkan data produk baru ke dalam sistem petshop, memastikan produk baru dapat ditambahkan.
+     - **Read**: Fungsi untuk membaca atau mengambil data produk dari sistem petshop, memastikan data produk dapat diakses.
+     - **Update**: Fungsi untuk memperbarui data produk yang sudah ada dalam sistem petshop, memastikan data produk dapat diperbarui.
+     - **Delete**: Fungsi untuk menghapus data produk dari sistem petshop, memastikan data produk yang tidak diperlukan dapat dihapus.
+     - **Find**: Fungsi untuk mencari data produk berdasarkan kriteria tertentu dalam sistem petshop, memastikan produk yang dicari dapat ditemukan dengan mudah.
 
 Penjelasan di atas mencakup fungsi dari masing-masing atribut serta metode yang dibuat dalam proyek ini. Pastikan untuk melihat gambar hasil run kode di setiap bahasa untuk memahami implementasi lebih lanjut.
